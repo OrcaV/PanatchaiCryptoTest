@@ -41,6 +41,30 @@ android {
     }
 }
 
+tasks {
+    register<Delete>("deleteGitHook") {
+        group = "utils"
+        description = "Deleting githook"
+
+        val preCommit = "${rootProject.rootDir}/.git/hooks/pre-commit"
+        if (file(preCommit).exists()) {
+            delete(preCommit)
+        }
+    }
+
+    register<Copy>("installGitHook") {
+        group = "utils"
+        description = "Adding githook"
+
+        from("${rootProject.rootDir}/scripts/pre-commit")
+        into("${rootProject.rootDir}/.git/hooks")
+        fileMode = 0b111101101
+    }
+
+    getByName("build").dependsOn("installGitHook")
+    getByName("clean").dependsOn("deleteGitHook")
+}
+
 dependencies {
     implementation(Libraries.coreKtx)
     implementation(Libraries.appCompat)
