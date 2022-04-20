@@ -1,6 +1,8 @@
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
+    kotlin("android")
+    id(BuildPlugins.ktlint)
 }
 
 android {
@@ -31,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -44,6 +46,7 @@ dependencies {
     implementation(Libraries.appCompat)
     implementation(Libraries.materialDesign)
     implementation(Libraries.constraintLayout)
+    implementation(Libraries.kotlinStdlib)
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)

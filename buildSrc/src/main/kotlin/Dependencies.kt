@@ -7,6 +7,8 @@ object Versions {
     const val androidAppVersion = "7.1.3"
     const val androidLibraryVersion = "7.1.3"
     const val jetbrainsKotlinVersion = "1.5.30"
+    const val ktlintVersion = "3.10.0"
+    const val kotlinVersion = "1.6.20"
 
     const val coreKtx = "1.7.0"
     const val jetpack = "1.4.1"
@@ -22,6 +24,7 @@ object BuildPlugins {
     const val androidLibrary = "com.android.library"
     const val jetbrainsKotlin = "org.jetbrains.kotlin.android"
     const val kotlinAndroid = "kotlin-android"
+    const val ktlint = "org.jmailen.kotlinter"
 }
 
 object AndroidSdk {
@@ -36,6 +39,9 @@ object Libraries {
     const val materialDesign = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
+    const val kotlinGradlePlugin =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
 }
 
 object TestLibraries {
