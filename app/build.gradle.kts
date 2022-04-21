@@ -109,6 +109,7 @@ dependencies {
     implementation(Libraries.roomKtx)
     implementation(Libraries.roomPaging)
     implementation(Libraries.paging)
+    implementation(Libraries.materialDesign3)
     testImplementation(TestLibraries.junit4)
     testImplementation(TestLibraries.room)
     testImplementation(TestLibraries.paging)

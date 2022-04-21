@@ -24,6 +24,7 @@ object Versions {
     const val room = "2.4.2"
     const val roomPaging = "2.5.0-alpha01"
     const val paging = "3.1.1"
+    const val materialDesign = "1.7.0-alpha01"
 }
 
 object BuildPlugins {
@@ -61,6 +62,7 @@ object Libraries {
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
+    const val materialDesign3 = "com.google.android.material:material:${Versions.materialDesign}"
 }
 
 object TestLibraries {
