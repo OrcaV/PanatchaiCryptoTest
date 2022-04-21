@@ -4,7 +4,9 @@ plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     kotlin("android")
+    kotlin("kapt")
     id(BuildPlugins.ktlint)
+    id(BuildPlugins.hilt)
     jacoco
 }
 
@@ -85,7 +87,15 @@ dependencies {
     implementation(Libraries.constraintLayout)
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.jacoco)
+    implementation(Libraries.hiltAndroid)
+    kapt(Libraries.hiltKapt)
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
+}
+
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

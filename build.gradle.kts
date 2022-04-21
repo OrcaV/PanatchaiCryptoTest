@@ -10,6 +10,7 @@ buildscript {
     dependencies {
         classpath (Libraries.kotlinGradlePlugin)
         classpath (Libraries.jacoco)
+        classpath (Libraries.hilt)
     }
 }
 
