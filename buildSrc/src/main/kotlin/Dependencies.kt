@@ -18,6 +18,7 @@ object Versions {
     const val junitExt = "1.1.3"
     const val espressoCore = "3.4.0"
     const val jacoco = "0.8.8"
+    const val hilt = "2.38.1"
 }
 
 object BuildPlugins {
@@ -26,6 +27,7 @@ object BuildPlugins {
     const val jetbrainsKotlin = "org.jetbrains.kotlin.android"
     const val kotlinAndroid = "kotlin-android"
     const val ktlint = "org.jmailen.kotlinter"
+    const val hilt = "dagger.hilt.android.plugin"
 }
 
 object AndroidSdk {
@@ -44,6 +46,9 @@ object Libraries {
     const val kotlinGradlePlugin =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
     const val jacoco = "org.jacoco:org.jacoco.core:${Versions.jacoco}"
+    const val hilt = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object TestLibraries {
