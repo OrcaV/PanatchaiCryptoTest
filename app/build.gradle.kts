@@ -25,6 +25,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "COIN_API", "\"https://api.coinstats.app/\"")
     }
 
     buildTypes {
@@ -89,6 +91,8 @@ dependencies {
     implementation(Libraries.jacoco)
     implementation(Libraries.hiltAndroid)
     kapt(Libraries.hiltKapt)
+    implementation(Libraries.retrofit)
+    implementation(Libraries.moshiConverter)
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)

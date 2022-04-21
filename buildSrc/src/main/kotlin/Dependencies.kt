@@ -19,6 +19,8 @@ object Versions {
     const val espressoCore = "3.4.0"
     const val jacoco = "0.8.8"
     const val hilt = "2.38.1"
+    const val retrofit = "2.9.0"
+    const val moshiConverter = "2.9.0"
 }
 
 object BuildPlugins {
@@ -49,6 +51,8 @@ object Libraries {
     const val hilt = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}"
 }
 
 object TestLibraries {
