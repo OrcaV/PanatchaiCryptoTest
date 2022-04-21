@@ -21,6 +21,8 @@ object Versions {
     const val hilt = "2.38.1"
     const val retrofit = "2.9.0"
     const val moshiConverter = "2.9.0"
+    const val room = "2.4.2"
+    const val roomPaging = "2.5.0-alpha01"
 }
 
 object BuildPlugins {
@@ -53,12 +55,17 @@ object Libraries {
     const val hiltKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}"
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+    const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
 }
 
 object TestLibraries {
     const val junit4 = "junit:junit:${Versions.junit4}"
     const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+    const val room = "androidx.room:room-testing:${Versions.room}"
 }
 
 object BuildTaskGroups {

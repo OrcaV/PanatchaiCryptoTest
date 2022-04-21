@@ -27,6 +27,16 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "COIN_API", "\"https://api.coinstats.app/\"")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -93,11 +103,16 @@ dependencies {
     kapt(Libraries.hiltKapt)
     implementation(Libraries.retrofit)
     implementation(Libraries.moshiConverter)
+    implementation(Libraries.roomRuntime)
+    annotationProcessor(Libraries.roomCompiler)
+    kapt(Libraries.roomCompiler)
+    implementation(Libraries.roomKtx)
+    implementation(Libraries.roomPaging)
     testImplementation(TestLibraries.junit4)
+    testImplementation(TestLibraries.room)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
 }
-
 
 // Allow references to generated code
 kapt {
