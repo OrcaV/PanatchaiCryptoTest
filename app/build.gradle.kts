@@ -108,8 +108,10 @@ dependencies {
     kapt(Libraries.roomCompiler)
     implementation(Libraries.roomKtx)
     implementation(Libraries.roomPaging)
+    implementation(Libraries.paging)
     testImplementation(TestLibraries.junit4)
     testImplementation(TestLibraries.room)
+    testImplementation(TestLibraries.paging)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
 }

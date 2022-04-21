@@ -23,6 +23,7 @@ object Versions {
     const val moshiConverter = "2.9.0"
     const val room = "2.4.2"
     const val roomPaging = "2.5.0-alpha01"
+    const val paging = "3.1.1"
 }
 
 object BuildPlugins {
@@ -59,6 +60,7 @@ object Libraries {
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
+    const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 }
 
 object TestLibraries {
@@ -66,6 +68,7 @@ object TestLibraries {
     const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
     const val room = "androidx.room:room-testing:${Versions.room}"
+    const val paging = "androidx.paging:paging-common:${Versions.paging}"
 }
 
 object BuildTaskGroups {
