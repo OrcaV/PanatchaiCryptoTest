@@ -17,6 +17,7 @@ object Versions {
     const val junit4 = "4.13.2"
     const val junitExt = "1.1.3"
     const val espressoCore = "3.4.0"
+    const val jacoco = "0.8.8"
 }
 
 object BuildPlugins {
@@ -42,10 +43,15 @@ object Libraries {
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
     const val kotlinGradlePlugin =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+    const val jacoco = "org.jacoco:org.jacoco.core:${Versions.jacoco}"
 }
 
 object TestLibraries {
     const val junit4 = "junit:junit:${Versions.junit4}"
     const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+}
+
+object BuildTaskGroups {
+    const val verification = "verification"
 }

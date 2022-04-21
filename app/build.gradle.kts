@@ -1,8 +1,15 @@
+apply(from = "../jacoco.gradle.kts")
+
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     kotlin("android")
     id(BuildPlugins.ktlint)
+    jacoco
+}
+
+jacoco {
+    toolVersion = Versions.jacoco
 }
 
 android {
@@ -39,6 +46,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
+    }
 }
 
 tasks {
@@ -71,6 +84,7 @@ dependencies {
     implementation(Libraries.materialDesign)
     implementation(Libraries.constraintLayout)
     implementation(Libraries.kotlinStdlib)
+    implementation(Libraries.jacoco)
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
