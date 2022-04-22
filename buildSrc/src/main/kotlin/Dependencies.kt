@@ -25,6 +25,7 @@ object Versions {
     const val roomPaging = "2.5.0-alpha01"
     const val paging = "3.1.1"
     const val materialDesign = "1.7.0-alpha01"
+    const val recyclerView = "1.2.1"
 }
 
 object BuildPlugins {
@@ -63,6 +64,7 @@ object Libraries {
     const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
     const val materialDesign3 = "com.google.android.material:material:${Versions.materialDesign}"
+    const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
 }
 
 object TestLibraries {
