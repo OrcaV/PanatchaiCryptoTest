@@ -26,6 +26,14 @@ object Versions {
     const val paging = "3.1.1"
     const val materialDesign = "1.7.0-alpha01"
     const val recyclerView = "1.2.1"
+
+    const val activityKtx = "1.4.0"
+    const val fragmentKtx = "1.4.1"
+    const val lifecycleRuntime = "2.5.0-beta01"
+    const val lifecycleViewModel = "2.5.0-beta01"
+    const val pagingCommonKtx = "2.1.2"
+    const val pagingRuntimeKtx = "2.1.2"
+    const val preferenceKtx = "1.2.0"
 }
 
 object BuildPlugins {
@@ -65,6 +73,13 @@ object Libraries {
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
     const val materialDesign3 = "com.google.android.material:material:${Versions.materialDesign}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
+    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModel}"
+    const val pagingCommonKtx = "androidx.paging:paging-common-ktx:${Versions.pagingCommonKtx}"
+    const val pagingRuntimeKtx = "androidx.paging:paging-runtime-ktx:${Versions.pagingRuntimeKtx}"
+    const val preferenceKtx = "androidx.preference:preference-ktx:${Versions.preferenceKtx}"
 }
 
 object TestLibraries {
@@ -73,6 +88,7 @@ object TestLibraries {
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
     const val room = "androidx.room:room-testing:${Versions.room}"
     const val paging = "androidx.paging:paging-common:${Versions.paging}"
+    const val fragmentKtx = "androidx.fragment:fragment-testing:${Versions.fragmentKtx}"
 }
 
 object BuildTaskGroups {
