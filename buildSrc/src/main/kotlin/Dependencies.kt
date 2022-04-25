@@ -6,13 +6,12 @@ object Versions {
      */
     const val androidAppVersion = "7.1.3"
     const val androidLibraryVersion = "7.1.3"
-    const val jetbrainsKotlinVersion = "1.5.30"
+    const val jetbrainsKotlinVersion = "1.6.21"
     const val ktlintVersion = "3.10.0"
     const val kotlinVersion = "1.6.20"
 
     const val coreKtx = "1.7.0"
     const val jetpack = "1.4.1"
-    const val material = "1.5.0"
     const val constraintLayout = "2.1.3"
     const val junit4 = "4.13.2"
     const val junitExt = "1.1.3"
@@ -32,8 +31,13 @@ object Versions {
     const val lifecycleRuntime = "2.5.0-beta01"
     const val lifecycleViewModel = "2.5.0-beta01"
     const val pagingCommonKtx = "2.1.2"
-    const val pagingRuntimeKtx = "2.1.2"
     const val preferenceKtx = "1.2.0"
+    const val robolectric = "4.6"
+    const val truth = "1.1.3"
+    const val junitKtx = "1.1.3"
+    const val mockito = "4.0.0"
+    const val coroutineKtx = "1.6.1"
+    const val coreTest = "2.1.0"
 }
 
 object BuildPlugins {
@@ -54,7 +58,6 @@ object AndroidSdk {
 object Libraries {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.jetpack}"
-    const val materialDesign = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
@@ -78,7 +81,7 @@ object Libraries {
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModel}"
     const val pagingCommonKtx = "androidx.paging:paging-common-ktx:${Versions.pagingCommonKtx}"
-    const val pagingRuntimeKtx = "androidx.paging:paging-runtime-ktx:${Versions.pagingRuntimeKtx}"
+    const val pagingRuntimeKtx = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
     const val preferenceKtx = "androidx.preference:preference-ktx:${Versions.preferenceKtx}"
 }
 
@@ -89,6 +92,13 @@ object TestLibraries {
     const val room = "androidx.room:room-testing:${Versions.room}"
     const val paging = "androidx.paging:paging-common:${Versions.paging}"
     const val fragmentKtx = "androidx.fragment:fragment-testing:${Versions.fragmentKtx}"
+    const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    const val truth = "com.google.truth:truth:${Versions.truth}"
+    const val junitKtx = "androidx.test.ext:junit-ktx:${Versions.junitKtx}"
+    const val mockito = "org.mockito.kotlin:mockito-kotlin:${Versions.mockito}"
+    const val coroutineKtx =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutineKtx}"
+    const val coreTest = "androidx.arch.core:core-testing:${Versions.coreTest}"
 }
 
 object BuildTaskGroups {

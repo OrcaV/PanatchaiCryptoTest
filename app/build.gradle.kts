@@ -60,6 +60,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs += listOf("-opt-in=kotlin.RequiresOptIn")
     }
     testOptions {
         unitTests {
@@ -96,11 +97,11 @@ tasks {
 dependencies {
     implementation(Libraries.coreKtx)
     implementation(Libraries.appCompat)
-    implementation(Libraries.materialDesign)
     implementation(Libraries.constraintLayout)
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.jacoco)
     implementation(Libraries.hiltAndroid)
+    implementation(TestLibraries.junitKtx)
     kapt(Libraries.hiltKapt)
     implementation(Libraries.retrofit)
     implementation(Libraries.moshiConverter)
@@ -123,6 +124,11 @@ dependencies {
     testImplementation(TestLibraries.junit4)
     testImplementation(TestLibraries.room)
     testImplementation(TestLibraries.paging)
+    testImplementation(TestLibraries.robolectric)
+    testImplementation(TestLibraries.truth)
+    testImplementation(TestLibraries.mockito)
+    testImplementation(TestLibraries.coroutineKtx)
+    testImplementation(TestLibraries.coreTest)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
 }
