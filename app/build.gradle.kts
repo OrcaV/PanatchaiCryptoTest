@@ -68,6 +68,10 @@ android {
             isReturnDefaultValues = true
         }
     }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 tasks {
@@ -108,6 +112,8 @@ dependencies {
     implementation(Libraries.roomRuntime)
     annotationProcessor(Libraries.roomCompiler)
     kapt(Libraries.roomCompiler)
+    kapt(Libraries.glideCompiler)
+    implementation(Libraries.glideRuntime)
     implementation(Libraries.roomKtx)
     implementation(Libraries.roomPaging)
     implementation(Libraries.paging)
@@ -120,6 +126,7 @@ dependencies {
     implementation(Libraries.pagingCommonKtx)
     implementation(Libraries.pagingRuntimeKtx)
     implementation(Libraries.preferenceKtx)
+    implementation(Libraries.swipeRefresh)
     implementation(TestLibraries.fragmentKtx)
     testImplementation(TestLibraries.junit4)
     testImplementation(TestLibraries.room)

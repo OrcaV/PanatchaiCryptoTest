@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.v.panatchai.cryptocurrency.presentation.models.CurrencyModel" />
+
+        <variable
+            name="model"
+            type="CurrencyModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/listItemCurrencyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:paddingStart="@dimen/small"
+        android:paddingEnd="@dimen/small">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/listItemCurrencyImage"
+            android:layout_width="@dimen/list_item_image_size"
+            android:layout_height="@dimen/list_item_image_size"
+            android:contentDescription="@string/currency_image_content_description"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/ic_dialog_info" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listItemCurrencyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small"
+            android:layout_marginEnd="@dimen/small"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxEms="@integer/currency_name_max_ems"
+            android:maxLines="1"
+            android:paddingStart="@dimen/small"
+            android:paddingEnd="@dimen/small"
+            android:text="@{model.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/listItemCurrencySymbol"
+            app:layout_constraintStart_toEndOf="@+id/listItemCurrencyImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Crypto.com" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listItemCurrencySymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small"
+            android:layout_marginEnd="@dimen/small"
+            android:text="@{model.symbol}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/listItemCurrencyTrailingImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="MCO" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/listItemCurrencyTrailingImage"
+            android:layout_width="@dimen/list_item_image_size"
+            android:layout_height="@dimen/list_item_image_size"
+            android:contentDescription="@string/currency_trailing_image_content_description"
+            android:padding="@dimen/vsmall"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/darker_gray" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
