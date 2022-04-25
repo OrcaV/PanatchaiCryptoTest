@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.v.panatchai.cryptocurrency.enums.OrderBy" />
+
+        <import type="kotlinx.coroutines.flow.StateFlow" />
+
+        <variable
+            name="orderBy"
+            type="StateFlow&lt;OrderBy&gt;" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/currencyCoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".presentation.views.MainActivity">
+
+        <!--First child of CoordinatorLayout layout
+         should be App Bar Layout-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/currencyAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!-- Add Material toolbar make the layout_scrollFlags
+                  to scroll|enterAlways (Important)-->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/currencyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@string/app_name">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/currencySearchContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/small"
+                    android:paddingEnd="@dimen/small">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/currencySearchInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/small"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="@dimen/small"
+                        app:boxCornerRadiusBottomStart="@dimen/small"
+                        app:boxCornerRadiusTopEnd="@dimen/small"
+                        app:boxCornerRadiusTopStart="@dimen/small"
+                        app:counterEnabled="false"
+                        app:counterMaxLength="@integer/currency_search_max"
+                        app:hintAnimationEnabled="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/currencySort"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/currencySearchInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/currency_search_hint"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLength="@integer/currency_search_max"
+                            android:maxLines="@integer/input_one_line"
+                            android:textColor="@color/text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/currencySort"
+                        android:layout_width="@dimen/material_button_width"
+                        android:layout_height="@dimen/material_button_height"
+                        android:layout_marginTop="@dimen/small"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:backgroundTint="@color/teal_200"
+                        app:layout_constraintBottom_toBottomOf="@+id/currencySearchInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/currencySearchInputLayout"
+                        app:layout_constraintTop_toTopOf="@+id/currencySearchInputLayout"
+                        app:orderBy="@{orderBy}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--Add a recycler view
+            inside layout behaviour add "@string/appbar_scrolling_view_behavior" (Important)
+            by default it comes from the @string-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/currencySwipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchInputLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/currencyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/small"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/list_item_currency" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!--Add a floating action button
+            "com.google.android.material.behavior.HideBottomViewOnScrollBehavior" (Important)-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/currencyFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/medium"
+            android:contentDescription="@string/currency_fab_description"
+            android:src="@drawable/ic_scroll_up"
+            app:fabSize="normal"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

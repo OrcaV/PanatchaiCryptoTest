@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vsmall">6dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="medium">16dp</dimen>
+    <dimen name="list_item_height">60dp</dimen>
+    <dimen name="list_item_image_size">25dp</dimen>
+    <dimen name="material_button_width">64dp</dimen>
+    <dimen name="material_button_height">64dp</dimen>
+
+    <integer name="currency_name_max_ems">20</integer>
+    <integer name="currency_search_max">20</integer>
+    <integer name="input_one_line">1</integer>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

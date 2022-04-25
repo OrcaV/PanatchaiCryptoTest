@@ -17,8 +17,8 @@ val mustBeTested = mutableListOf(
 )
 
 val jaCocoConfig = mapOf<String, String>(
-    // the build will fail if we miss >= 10% of the if-else and switches package-wide.
-    Counter.PACKAGE_BRANCH_COVERAGE to "0.9",
+    // the build will fail if we miss >= 20% of the if-else and switches package-wide.
+    Counter.PACKAGE_BRANCH_COVERAGE to "0.8",
     // the build will fail if we miss >= 10% of the lines package-wide.
     Counter.PACKAGE_LINE_COVERAGE to "0.9",
     // Every ViewModel and UseCase class
@@ -29,8 +29,8 @@ val jaCocoConfig = mapOf<String, String>(
     // the build will fail if the code (per method/function) is way too complex.
     // https://en.wikipedia.org/wiki/Cyclomatic_complexity
     Counter.METHOD_COMPLEXITY to "26",
-    // the build will fail if we miss >= 10% of the lines per method/function.
-    Counter.METHOD_BRANCH_COVERAGE to "0.9"
+    // the build will fail if we miss >= 20% of the lines per method/function.
+    Counter.METHOD_BRANCH_COVERAGE to "0.8"
 )
 
 val excludeList = listOf<String>(
@@ -57,6 +57,13 @@ val excludeList = listOf<String>(
     "**/injector/**/*.*", // ignore the auto-generated
     "**/di/**/*.*", // ignore the auto-generated
     "**/*Directions*.*", // ignore the auto-generated
+    "**/Hilt_*.*", // ignore the auto-generated
+    "**/hilt_*/**/*.*", // ignore the auto-generated
+    "**/dagger*/**/*.*", // ignore the auto-generated
+    "**/Generated*.*", // ignore the auto-generated
+    "**/*_Impl.*", // ignore the auto-generated
+    "**/DataBindingTriggerClass.*", // ignore the auto-generated
+    "**/*_ComponentTreeDeps*", // ignore the auto-generated
     // remove what we don"t test
     "androidTest/**/*.*", // ignore any test classes
     "test/**/*.*", // ignore any test classes
@@ -65,7 +72,10 @@ val excludeList = listOf<String>(
     "**/coroutines/*.*", // ignore the wrapper class, nothing to test
     "**/database/*.*", // ignore the Room database, there is nothing to test
     "**/KeystoreProvider*", // Framework component
-    "**/extensions*Reflector*" // Java Reflector to access internal method, no need to test
+    "**/extensions*Reflector*", // Java Reflector to access internal method, no need to test
+    "**/views/**/*.*", // Skip Instrumental tests for now, too much work
+    "**//CryptoCurrencyApp.*", // Skip Application class
+    "**/utils/**/*" // Do not test static utilities
 )
 
 val classDirectoriesTree = fileTree("${project.buildDir}") {
@@ -81,10 +91,10 @@ val classDirectoriesTree = fileTree("${project.buildDir}") {
 
 val sourceDirectoriesTree = fileTree("${project.buildDir}") {
     include(
-        "src/main/java/**",
-        "src/main/kotlin/**",
-        "src/main/**/java/**",
-        "src/main/**/kotlin/**"
+        "${project.projectDir}/src/main/java/**",
+        "${project.projectDir}/src/main/kotlin/**",
+        "${project.projectDir}/src/main/**/java/**",
+        "${project.projectDir}/src/main/**/kotlin/**"
     )
 }
 
