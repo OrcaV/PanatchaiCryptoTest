@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CryptoCurrency</string>
+    <string name="currency_image_content_description">Currency Icon</string>
+    <string name="currency_trailing_image_content_description">Currency Detail Icon</string>
+    <string name="currency_fab_description">Scroll Up</string>
+    <string name="currency_sort_description">Sort Currency Name By %1$s</string>
+    <string name="currency_search_hint">Enter currency name</string>
+    <string name="currency_list_item_retry">Retry</string>
+</resources>
