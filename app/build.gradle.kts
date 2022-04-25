@@ -27,6 +27,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "COIN_API", "\"https://api.coinstats.app/\"")
+        buildConfigField("String", "COIN_DATABASE", "\"CoinDatabase\"")
 
         javaCompileOptions {
             annotationProcessorOptions {

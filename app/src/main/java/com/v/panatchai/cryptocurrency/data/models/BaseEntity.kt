@@ -1,6 +1,6 @@
 package com.v.panatchai.cryptocurrency.data.models
 
 /**
- * Root of Data Models
+ * Root of Data Entities
  */
-abstract class BaseModel
+abstract class BaseEntity
