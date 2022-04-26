@@ -8,13 +8,16 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.v.panatchai.cryptocurrency.databinding.FragmentCurrencyBinding
+import com.v.panatchai.cryptocurrency.presentation.models.CurrencyModel
 import com.v.panatchai.cryptocurrency.presentation.models.UiModel
 import com.v.panatchai.cryptocurrency.presentation.utils.asMergedLoadStates
+import com.v.panatchai.cryptocurrency.presentation.views.SimpleNavigation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +28,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
 
 @AndroidEntryPoint
-class CurrencyFragment : Fragment() {
+class CurrencyFragment : Fragment(), SimpleNavigation.NavigationHost<UiModel> {
 
     @Inject
     internal lateinit var currencyListAdapter: PagingDataAdapter<UiModel, RecyclerView.ViewHolder> // <-- depends on abstraction
@@ -49,6 +52,17 @@ class CurrencyFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.orderBy = viewModel.orderBy
+    }
+
+    override fun navigateBy(destinationModel: UiModel) {
+        if (destinationModel is CurrencyModel) {
+            val navDirections =
+                CurrencyFragmentDirections.actionCurrencyFragmentToCurrencyDetailFragment(
+                    destinationModel
+                )
+            findNavController().navigate(navDirections)
+        }
+        // else no-opt
     }
 
     private fun setupCurrencyAdapter() {

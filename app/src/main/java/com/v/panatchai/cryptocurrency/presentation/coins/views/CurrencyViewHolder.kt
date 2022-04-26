@@ -10,8 +10,18 @@ import com.v.panatchai.cryptocurrency.presentation.models.UiModel
 
 class CurrencyViewHolder(
     private val binding: ListItemCurrencyBinding,
-    private val glide: GlideRequests
+    private val glide: GlideRequests,
+    onItemClicked: (UiModel) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
+
+    init {
+        // Setting onClick when create the ViewHolder is the most efficient way, in contradiction to,
+        // what you may have seen where people set the onClick inside the `bind()` method, which gets
+        // called the time.
+        binding.root.setOnClickListener {
+            onItemClicked(binding.model as UiModel)
+        }
+    }
 
     fun bind(model: UiModel?) {
         /**
@@ -31,13 +41,18 @@ class CurrencyViewHolder(
     }
 
     companion object {
-        fun create(parent: ViewGroup, glide: GlideRequests) = CurrencyViewHolder(
+        fun create(
+            parent: ViewGroup,
+            glide: GlideRequests,
+            onItemClicked: (UiModel) -> Unit
+        ) = CurrencyViewHolder(
             ListItemCurrencyBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             ),
-            glide
+            glide,
+            onItemClicked
         )
     }
 }

@@ -40,6 +40,7 @@ object Versions {
     const val mockito = "4.0.0"
     const val coroutineKtx = "1.6.1"
     const val coreTest = "2.1.0"
+    const val navigation = "2.4.2"
 }
 
 object BuildPlugins {
@@ -49,6 +50,8 @@ object BuildPlugins {
     const val kotlinAndroid = "kotlin-android"
     const val ktlint = "org.jmailen.kotlinter"
     const val hilt = "dagger.hilt.android.plugin"
+    const val parcelize = "kotlin-parcelize"
+    const val safeArgs = "androidx.navigation.safeargs.kotlin"
 }
 
 object AndroidSdk {
@@ -91,6 +94,10 @@ object Libraries {
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefresh}"
     const val glideRuntime = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 }
 
 object TestLibraries {
@@ -107,6 +114,7 @@ object TestLibraries {
     const val coroutineKtx =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutineKtx}"
     const val coreTest = "androidx.arch.core:core-testing:${Versions.coreTest}"
+    const val navigation = "androidx.navigation:navigation-testing:${Versions.navigation}"
 }
 
 object BuildTaskGroups {

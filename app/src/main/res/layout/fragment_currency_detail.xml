@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.v.panatchai.cryptocurrency.presentation.models.CurrencyModel" />
+
+        <variable
+            name="model"
+            type="CurrencyModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/currencyDetailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".presentation.coins.views.CurrencyDetailFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/currencyDetailAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small"
+            android:backgroundTint="@color/backgroundTint"
+            android:elevation="@dimen/vsmall"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/currencyDetailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:navigationIconTint="@color/text"
+                app:title="@{model.name}"
+                app:titleTextColor="@color/text" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/simpleCurrencyDetails"
+            layout="@layout/list_item_currency"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height"
+            android:layout_marginStart="@dimen/medium"
+            android:layout_marginEnd="@dimen/medium"
+            app:model="@{model}" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/currencyFragment">
+    <fragment
+        android:id="@+id/currencyFragment"
+        android:name="com.v.panatchai.cryptocurrency.presentation.coins.views.CurrencyFragment"
+        android:label="CurrencyFragment">
+        <action
+            android:id="@+id/action_currencyFragment_to_currencyDetailFragment"
+            app:destination="@id/currencyDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencyDetailFragment"
+        android:name="com.v.panatchai.cryptocurrency.presentation.coins.views.CurrencyDetailFragment"
+        android:label="CurrencyDetailFragment">
+        <argument
+            android:name="currencyModel"
+            app:argType="com.v.panatchai.cryptocurrency.presentation.models.CurrencyModel" />
+    </fragment>
+</navigation>
