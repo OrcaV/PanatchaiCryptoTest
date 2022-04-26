@@ -11,6 +11,7 @@ import com.v.panatchai.cryptocurrency.presentation.models.UiModel
 class CurrencyListAdapter constructor(
     diffCallback: DiffUtil.ItemCallback<UiModel>,
     private val glide: GlideRequests,
+    private val onItemClicked: (UiModel) -> Unit
 ) : PagingDataAdapter<UiModel, RecyclerView.ViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(
@@ -18,7 +19,7 @@ class CurrencyListAdapter constructor(
         viewType: Int
     ): RecyclerView.ViewHolder {
         return when (viewType) {
-            TYPE_CURRENCY -> CurrencyViewHolder.create(parent, glide)
+            TYPE_CURRENCY -> CurrencyViewHolder.create(parent, glide, onItemClicked)
             else -> SeparatorViewHolder.create(parent)
         }
     }

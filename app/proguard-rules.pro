@@ -78,3 +78,6 @@
 
 # for DexGuard only
 -keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+-keepnames class com.v.panatchai.cryptocurrency.presentation.models.*
+-keepnames class com.v.panatchai.cryptocurrency.presentation.models.*

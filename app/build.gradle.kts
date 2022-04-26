@@ -5,6 +5,8 @@ plugins {
     id(BuildPlugins.kotlinAndroid)
     kotlin("android")
     kotlin("kapt")
+    id(BuildPlugins.parcelize)
+    id(BuildPlugins.safeArgs)
     id(BuildPlugins.ktlint)
     id(BuildPlugins.hilt)
     jacoco
@@ -106,6 +108,7 @@ dependencies {
     implementation(Libraries.jacoco)
     implementation(Libraries.hiltAndroid)
     implementation(TestLibraries.junitKtx)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(Libraries.hiltKapt)
     implementation(Libraries.retrofit)
     implementation(Libraries.moshiConverter)
@@ -127,6 +130,8 @@ dependencies {
     implementation(Libraries.pagingRuntimeKtx)
     implementation(Libraries.preferenceKtx)
     implementation(Libraries.swipeRefresh)
+    implementation(Libraries.navigationFragment)
+    implementation(Libraries.navigationUi)
     implementation(TestLibraries.fragmentKtx)
     testImplementation(TestLibraries.junit4)
     testImplementation(TestLibraries.room)
@@ -136,6 +141,7 @@ dependencies {
     testImplementation(TestLibraries.mockito)
     testImplementation(TestLibraries.coroutineKtx)
     testImplementation(TestLibraries.coreTest)
+    testImplementation(TestLibraries.navigation)
     androidTestImplementation(TestLibraries.junitExt)
     androidTestImplementation(TestLibraries.espresso)
 }

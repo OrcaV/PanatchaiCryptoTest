@@ -11,6 +11,7 @@ buildscript {
         classpath (Libraries.kotlinGradlePlugin)
         classpath (Libraries.jacoco)
         classpath (Libraries.hilt)
+        classpath (Libraries.safeArgs)
     }
 }
 
