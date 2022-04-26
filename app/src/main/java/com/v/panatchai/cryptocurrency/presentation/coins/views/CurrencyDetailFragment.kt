@@ -28,7 +28,8 @@ class CurrencyDetailFragment : Fragment() {
     private lateinit var binding: FragmentCurrencyDetailBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentCurrencyDetailBinding.inflate(inflater, container, false)

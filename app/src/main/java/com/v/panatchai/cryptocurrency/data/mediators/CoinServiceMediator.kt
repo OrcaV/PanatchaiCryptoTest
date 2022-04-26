@@ -46,6 +46,7 @@ class CoinServiceMediator(
         }
     }
 
+    @Suppress("OVERLOADS_WITHOUT_DEFAULT_ARGUMENTS")
     @JvmOverloads
     override suspend fun load(
         loadType: LoadType,
